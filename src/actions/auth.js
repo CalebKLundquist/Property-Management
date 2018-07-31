@@ -10,7 +10,6 @@ export function signUp(fields, success) {
     return function (dispatch) {
         axios.post(`${ROOT_URL}/signUp`, fields)
             .then(response => {
-                console.log(response);
                 const { token } = response.data;
                 localStorage.setItem('token', token);
                 dispatch({
@@ -29,7 +28,6 @@ export function signIn(fields, success) {
     return function (dispatch) {
         axios.post(`${ROOT_URL}/signIn`, fields)
             .then(response => {
-                console.log(response.data);
                 const { token } = response.data;
                 localStorage.setItem('token', token);
                 dispatch({
